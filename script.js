@@ -38,8 +38,49 @@ template.onload = drawCanvas;
 
 function drawCanvas() {
 
-    // Draw the background image
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
+
+    // ------------------------
+    // Draw Name
+    // ------------------------
+
+    let name = nameInput.value.trim().toUpperCase();
+
+    if (name !== "") {
+        name += "'S";
+    }
+
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    ctx.font = "bold 48px Arial";
+
+    ctx.fillText(
+        name + " DREAM TRACKLIST",
+        540,
+        560
+    );
+
+    // ------------------------
+    // Draw Songs
+    // ------------------------
+
+    ctx.font = "34px Arial";
+    ctx.fillStyle = "#ffffff";
+
+    const startY = 795;
+    const spacing = 58;
+
+    trackInputs.forEach((input, index) => {
+
+        ctx.fillText(
+            input.value.toUpperCase(),
+            540,
+            startY + spacing * index
+        );
+
+    });
 
 }
