@@ -138,12 +138,11 @@ trackInputs.forEach((input, index) => {
 
     ctx.font = `bold ${fontSize}px Arial`;
 
-ctx.fillText(
-    song,
-    trackPositions[index].x,
-    trackPositions[index].y
-);
-);
+    ctx.fillText(
+        song,
+        trackPositions[index].x,
+        trackPositions[index].y
+    );
 
 });
 
