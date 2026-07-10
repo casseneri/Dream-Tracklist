@@ -3,17 +3,15 @@ const TRACK_COUNT = 12;
 const tracksDiv = document.getElementById("tracks");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
 const nameInput = document.getElementById("name");
+const downloadBtn = document.getElementById("download");
 
-// Load template image
 const template = new Image();
 template.src = "template.png";
 
-// Store all the song input boxes
 const trackInputs = [];
 
-// Create the inputs
+// Create track input boxes
 for (let i = 1; i <= TRACK_COUNT; i++) {
 
     const label = document.createElement("label");
@@ -21,6 +19,7 @@ for (let i = 1; i <= TRACK_COUNT; i++) {
 
     const input = document.createElement("input");
     input.className = "trackInput";
+    input.placeholder = `Track ${i}`;
     input.maxLength = 40;
 
     tracksDiv.appendChild(label);
@@ -29,20 +28,45 @@ for (let i = 1; i <= TRACK_COUNT; i++) {
     trackInputs.push(input);
 
     input.addEventListener("input", drawCanvas);
+
 }
 
 nameInput.addEventListener("input", drawCanvas);
 
-// Draw everything
 template.onload = drawCanvas;
 
+
+// Automatically shrink text if it's too long
+function fitText(text, maxWidth, startingSize) {
+
+    let size = startingSize;
+
+    while (size > 16) {
+
+        ctx.font = `${size}px Arial`;
+
+        if (ctx.measureText(text).width <= maxWidth) {
+            return size;
+        }
+
+        size--;
+
+    }
+
+    return 16;
+
+}
+
+
+// Draw everything
 function drawCanvas() {
 
+    // Background
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
 
     // ------------------------
-    // Draw Name
+    // NAME
     // ------------------------
 
     let name = nameInput.value.trim().toUpperCase();
@@ -51,36 +75,62 @@ function drawCanvas() {
         name += "'S";
     }
 
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#FFFFFF";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-
-    ctx.font = "bold 48px Arial";
+    ctx.font = "bold 46px Arial";
 
     ctx.fillText(
-        name + " DREAM TRACKLIST",
+        `${name} DREAM TRACKLIST`,
         540,
-        560
+        565
     );
 
     // ------------------------
-    // Draw Songs
+    // SONGS
     // ------------------------
 
-    ctx.font = "34px Arial";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#FFFFFF";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
 
-    const startY = 795;
+    const startX = 175;
+    const startY = 792;
     const spacing = 58;
+    const maxWidth = 720;
 
     trackInputs.forEach((input, index) => {
 
+        const song = input.value.toUpperCase();
+
+        const fontSize = fitText(song, maxWidth, 34);
+
+        ctx.font = `${fontSize}px Arial`;
+
         ctx.fillText(
-            input.value.toUpperCase(),
-            540,
-            startY + spacing * index
+            song,
+            startX,
+            startY + (spacing * index)
         );
 
     });
 
 }
+
+
+// Download image
+downloadBtn.addEventListener("click", () => {
+
+    const link = document.createElement("a");
+
+    const filename = (nameInput.value.trim() || "dream-tracklist")
+        .replace(/[^a-z0-9]/gi, "-")
+        .toLowerCase();
+
+    link.download = `${filename}.png`;
+
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+
+});
