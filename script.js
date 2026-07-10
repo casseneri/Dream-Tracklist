@@ -27,7 +27,25 @@ for (let i = 1; i <= TRACK_COUNT; i++) {
     tracksDiv.appendChild(input);
 
     trackInputs.push(input);
+input.addEventListener("keydown", (e)=>{
 
+    if(e.key==="Enter"){
+
+        e.preventDefault();
+
+        if(i<TRACK_COUNT){
+
+            trackInputs[i].focus();
+
+        }else{
+
+            downloadBtn.focus();
+
+        }
+
+    }
+
+});
     input.addEventListener("input", drawCanvas);
 
 }
