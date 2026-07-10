@@ -30,6 +30,9 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
 }
 
 canvas {
@@ -51,11 +54,31 @@ label {
     font-weight: bold;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
+input{
+
+    width:100%;
+    padding:12px 14px;
+
+    margin-bottom:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    transition:.2s;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#4CAF50;
+
+    box-shadow:0 0 0 3px rgba(76,175,80,.2);
+
 }
 
 .trackInput {
