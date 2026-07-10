@@ -76,7 +76,7 @@ function draw(){
 
         const song=document.getElementById("song"+i).value;
 
-        fitText(song, leftX, y, 365, 26);
+        fitText(song, rightX, y, 365, 26);
 
         y+=66;
 
