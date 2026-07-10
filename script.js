@@ -112,6 +112,7 @@ function drawCanvas() {
     ctx.fillStyle = "#FFFFFF";
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
+    ctx.font = "bold 45px Arial";
 
   const trackPositions = [
     { x: 95, y: 990 },   // Track 1
