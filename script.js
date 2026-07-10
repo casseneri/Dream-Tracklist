@@ -152,17 +152,23 @@ trackInputs.forEach((input, index) => {
 // Download image
 downloadBtn.addEventListener("click", () => {
 
-    const link = document.createElement("a");
-
     const filename = (nameInput.value.trim() || "dream-tracklist")
         .replace(/[^a-z0-9]/gi, "-")
         .toLowerCase();
 
-    link.download = `${filename}.png`;
+    canvas.toBlob(function(blob) {
 
-    link.href = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `${filename}.png`;
 
-    link.click();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        URL.revokeObjectURL(link.href);
+
+    }, "image/png");
 
 });
 const resetBtn = document.getElementById("reset");
