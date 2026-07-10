@@ -72,3 +72,23 @@ function draw(){
     }
 
 }
+const downloadBtn = document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click", () => {
+
+    const link = document.createElement("a");
+
+    let filename = document.getElementById("name").value.trim();
+
+    if(filename === "")
+        filename = "dream-tracklist";
+
+    filename = filename.replace(/[^a-z0-9]/gi,"-").toLowerCase();
+
+    link.download = filename + ".png";
+
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+
+});
