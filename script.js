@@ -153,3 +153,18 @@ downloadBtn.addEventListener("click", () => {
     link.click();
 
 });
+const resetBtn = document.getElementById("reset");
+
+resetBtn.addEventListener("click",()=>{
+
+    nameInput.value="";
+
+    trackInputs.forEach(input=>{
+
+        input.value="";
+
+    });
+
+    drawCanvas();
+
+});
