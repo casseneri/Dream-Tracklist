@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Legacy Collection by Christina Grimmie - Dream Tracklist Maker</title>
+    <title>Legacy Collection Dream Tracklist Maker</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Dream Tracklist Maker</h1>
+<div class="container">
 
-<div class="editor">
+    <div class="controls">
 
-    <label>Name</label>
-    <input id="name" maxlength="18" placeholder="Cass">
+        <h1>Dream Tracklist Maker</h1>
+        <p>Create your own version of <strong>The Legacy Collection</strong>.</p>
 
-    <label>Songs</label>
+        <label>Your Name</label>
+        <input type="text" id="name" maxlength="20" placeholder="Cass">
 
-    <div id="songInputs"></div>
+        <div id="trackInputs"></div>
 
-</div>
+        <button id="downloadBtn">
+            Download Image
+        </button>
 
-<canvas id="canvas" width="1080" height="1350"></canvas>
-<br><br>
+    </div>
 
-<button id="downloadBtn">
-Download My Tracklist
-</button>
+    <div class="preview">
+
+        <canvas
+            id="canvas"
+            width="1080"
+            height="1350">
+        </canvas>
+
+    </div>
+
 </div>
 
 <script src="script.js"></script>
