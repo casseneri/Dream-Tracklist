@@ -94,7 +94,7 @@ function drawCanvas() {
         name += "'S";
     }
 
-    ctx.fillStyle = "#FFFFFF";
+    ctx.fillStyle = "#e1deda";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = "italic bold 46px Arial";
