@@ -66,7 +66,7 @@ function draw() {
     ctx.fillText(
         name.toUpperCase()+"'S",
         540,
-        914
+       800
     );
 
     // -------------------
