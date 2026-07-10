@@ -136,7 +136,7 @@ trackInputs.forEach((input, index) => {
 
     const fontSize = fitText(song, maxWidth, 45);
 
-    ctx.font = `bold ${size}px Arial`;
+    ctx.font = `bold ${fontSize}px Arial`;
 
     ctx.fillText(
         song,
