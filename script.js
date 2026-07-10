@@ -114,18 +114,18 @@ function drawCanvas() {
     ctx.textBaseline = "middle";
 
   const trackPositions = [
-    { x: 95, y: 995 },   // Track 1
-    { x: 95, y: 1056 },  // Track 2
-    { x: 95, y: 1117 },  // Track 3
-    { x: 95, y: 1178 },  // Track 4
-    { x: 95, y: 1240 },  // Track 5
-    { x: 95, y: 1302 },  // Track 6
+    { x: 95, y: 990 },   // Track 1
+    { x: 95, y: 1051 },  // Track 2
+    { x: 95, y: 1112 },  // Track 3
+    { x: 95, y: 1173 },  // Track 4
+    { x: 95, y: 1235 },  // Track 5
+    { x: 95, y: 1297 },  // Track 6
     { x: 623, y: 995 },  // Track 7
-    { x: 623, y: 1056 }, // Track 8
-    { x: 623, y: 1117 }, // Track 9
-    { x: 623, y: 1178 }, // Track 10
-    { x: 623, y: 1240 }, // Track 11
-    { x: 623, y: 1302 }  // Track 12
+    { x: 623, y: 1051 }, // Track 8
+    { x: 623, y: 1112 }, // Track 9
+    { x: 623, y: 1173 }, // Track 10
+    { x: 623, y: 1235 }, // Track 11
+    { x: 623, y: 1297 }  // Track 12
 ];
 
 const maxWidth = 420;
