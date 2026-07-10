@@ -24,7 +24,18 @@ for(let i=1;i<=12;i++){
 document.getElementById("name").addEventListener("input",draw);
 
 template.onload=draw;
+function fitText(text, x, y, maxWidth, maxSize) {
 
+    let size = maxSize;
+
+    do {
+        ctx.font = `italic bold ${size}px Arial`;
+        size--;
+    } while (ctx.measureText(text).width > maxWidth && size > 14);
+
+    ctx.fillText(text, x, y);
+
+}
 function draw(){
 
     ctx.clearRect(0,0,1080,1350);
