@@ -121,7 +121,7 @@ function drawCanvas() {
     { x: 95, y: 1163 },  // Track 4
     { x: 95, y: 1225 },  // Track 5
     { x: 95, y: 1287 },  // Track 6
-    { x: 623, y: 985 },  // Track 7
+    { x: 623, y: 980 },  // Track 7
     { x: 623, y: 1041 }, // Track 8
     { x: 623, y: 1102 }, // Track 9
     { x: 623, y: 1163 }, // Track 10
