@@ -30,7 +30,8 @@ body {
 }
 
 .editor {
-    flex: 1;
+    flex: 0 1 430px;
+    max-width: 430px;
     background: #1E3026;
     padding: 10px;
     border-radius: 12px;
@@ -38,7 +39,7 @@ body {
 }
 
 .preview {
-    flex: 0 0 auto;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -46,9 +47,9 @@ body {
 
 canvas {
     display: block;
-    width: 100%;
-    max-width: 540px;
-    height: auto;
+    width: auto;
+    height: calc(100vh - 20px);
+    max-width: 100%;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,.2);
     background: white;
