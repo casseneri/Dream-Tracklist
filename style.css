@@ -5,6 +5,9 @@ label,
 canvas {
     cursor: url("rawwk-finger-cursor.png"), pointer;
 }
+input {
+    cursor: text;
+}
 * {
     box-sizing: border-box;
 }
