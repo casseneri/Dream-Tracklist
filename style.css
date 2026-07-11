@@ -6,8 +6,14 @@ button {
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
     font-family: Arial, sans-serif;
     background: transparent;
     color: #dfdfdf;
@@ -15,97 +21,89 @@ body {
 
 .wrapper {
     max-width: 1400px;
-    margin: 0px auto;
+    margin: 0 auto;
+    padding: 10px;
     display: flex;
-    gap: 10px;
-    padding: 5px;
     align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
 }
 
 .editor {
     flex: 1;
     background: #1E3026;
-    padding: 8px;
+    padding: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
 
 .preview {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
-    position: sticky;
-    top: 20px;
-    align-self: flex-start;
+    align-items: flex-start;
 }
 
 canvas {
+    display: block;
     width: 100%;
     max-width: 540px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,.2);
     background: white;
 }
 
 h1 {
-    margin-top: 0;
+    margin: 0 0 12px;
+}
+
+p {
+    margin: 0 0 12px;
+    line-height: 1.4;
 }
 
 label {
     display: block;
-    margin-top: 13px;
-    margin-bottom: 6px;
+    margin-top: 10px;
+    margin-bottom: 4px;
     font-weight: bold;
 }
 
-input{
-
-    width:100%;
-    padding:8px 8px;
-
-    margin-bottom:8px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    font-size:16px;
-
-    transition:.2s;
-
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: .2s;
 }
 
-input:focus{
-
-    outline:none;
-
-    border-color:#4CAF50;
-
-    box-shadow:0 0 0 3px rgba(76,175,80,.2);
-
+input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76,175,80,.2);
 }
 
 .trackInput {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 button {
-     font-weight: bold;
     width: 100%;
     margin-top: 10px;
     padding: 12px;
     font-size: 16px;
-    cursor: pointer;
+    font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: 12px;
     background: #345440;
-    border-radius: 8px;
-    background: black;
     color: white;
 }
 
 button:hover {
-    opacity: .9;
+    background: #89AB91;
 }
 
 @media (max-width: 900px) {
@@ -116,22 +114,18 @@ button:hover {
         padding: 10px;
     }
 
-    .editor,
-    .preview {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        flex: none;
-    }
-
     .preview {
         order: -1;
-        position: static;
+        width: 100%;
+    }
+
+    .editor {
+        width: 100%;
     }
 
     canvas {
         width: 100%;
         max-width: 540px;
-        height: auto;
+        margin: 0 auto;
     }
 }
