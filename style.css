@@ -103,6 +103,7 @@ button {
 }
 
 button:hover {
+   background: #335440;
     opacity: .9;
 }
 
