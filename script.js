@@ -20,7 +20,7 @@ for (let i = 1; i <= TRACK_COUNT; i++) {
     const input = document.createElement("input");
     input.placeholder = `Track ${i}`;
     input.className = "trackInput";
-    input.placeholder = `Track ${i}`;
+    input.placeholder = ` `;
     input.maxLength = 40;
 
     tracksDiv.appendChild(label);
