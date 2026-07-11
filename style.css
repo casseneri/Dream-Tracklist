@@ -21,7 +21,7 @@ body {
 .editor {
     flex: 1;
     background: #1E3026;
-    padding: 15px;
+    padding: 8px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
