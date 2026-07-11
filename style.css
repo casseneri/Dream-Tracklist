@@ -21,7 +21,7 @@ body {
 .editor {
     flex: 1;
     background: #1E3026;
-    padding: 25px;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
@@ -49,7 +49,7 @@ h1 {
 
 label {
     display: block;
-    margin-top: 18px;
+    margin-top: 13px;
     margin-bottom: 6px;
     font-weight: bold;
 }
@@ -87,8 +87,8 @@ input:focus{
 
 button {
     width: 100%;
-    margin-top: 20px;
-    padding: 14px;
+    margin-top: 10px;
+    padding: 12px;
     font-size: 16px;
     cursor: pointer;
     border: none;
