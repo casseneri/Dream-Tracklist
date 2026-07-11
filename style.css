@@ -1,3 +1,6 @@
+body {
+    cursor: url("rawwk-finger-cursor.png"), auto;
+}
 * {
     box-sizing: border-box;
 }
